@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from pizzashopapp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 from django.contrib.auth import views as auth_views
 
@@ -29,5 +31,7 @@ urlpatterns = [
          name='pizzashop-sign-out'),
     path('pizzashopapp', views.pizzashopapp_home, name='pizzashopapp-home'),
     path('pizzashopapp/sign-up', views.pizzashopapp_sign_up, name='pizzashopapp-sign-up'),
+    path('home', views.pizzashopapp_all, name='pizzashopapp-all'),
 
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

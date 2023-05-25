@@ -1,0 +1,24 @@
+}
+.container-description {
+  width: 420px;
+  padding: 1rem;
+}
+.card-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.3em;
+  height: 3.9em;
+}
+
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust the shadow properties as desired */
+}
+.row {
+/*display: inline-block;*/
+/*vertical-align: middle;*/
+/*margin: 10px 5px;*/
+  display: flex;
+align-items: stretch;
+}
