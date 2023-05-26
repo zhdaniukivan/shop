@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Pizza, Soup
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from .forms import FeedbackForm
+
+
 # Create your views here.
 
+
 def home(request):
-    return redirect(pizzashopapp_home)
+    return redirect('/home')
 
 @login_required(login_url='/pizzashopapp/sign-in')
 def pizzashopapp_home(request):
@@ -20,3 +24,15 @@ def pizzashopapp_all(request):
     soups = Soup.objects.all()
     return render(request, 'pizzashopapp/home.html', {'pizzas':pizzas, 'soups':soups})
 
+def bascket(request):
+    form = FeedbackForm()
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            return redirect('done')
+    form = FeedbackForm()
+    return render(request, 'pizzashopapp/bascket.html', {'form':form})
+
+def done(request):
+    return render(request, 'pizzashopapp/done.html', {})
