@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pizzashopapp',
     'debug_toolbar',
+    'rest_framework',
+    'pizza_constractor',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +130,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/'
 
 INTERNAL_IPS = [
     # ...

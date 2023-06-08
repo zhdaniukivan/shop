@@ -24,7 +24,20 @@
            </div>
 
           <p class="card-text">{{ pizza.price }} руб.</p>
-          <a href="#" class="btn btn-primary">Add in bascket</a>
+        <form method="POST" class="form">
+            {% csrf_token %}
+{#                <div>{{ form.amount }}</div>#}
+{#                <div>{{ form.name }}</div>#}
+</form>
+            <form action="/done" method="post">
+                {% csrf_token %}
+                <div class="plus-minus">
+                    <span class="minus-item">-</span>
+                    <span class="pizza-count">1</span>
+                    <span class="plus-item">+</span>
+                </div>
+          <button type="submit" class="btn btn-primary">Add to Basket</button>
+</form>
         </div>
       </div>
     </div>

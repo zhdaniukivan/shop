@@ -1,4 +1,4 @@
-}
+
 .container-description {
   width: 420px;
   padding: 1rem;
@@ -22,3 +22,27 @@
   display: flex;
 align-items: stretch;
 }
+
+element.style {
+}
+
+.plus-minus .plus-item {
+  /*cursor: pointer;*/
+  /*cursor: hand;*/
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  font: 30px/1 Malina, sans-serif;
+  letter-spacing: -1px;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 50%;
+  -moz-background-clip: padding;
+  border-radius: 50%;
+  background-clip: padding-box;
+  -webkit-text-stroke: 1px transparent;
+  -webkit-font-smoothing: antialiased;
+  background-color: #277dff;

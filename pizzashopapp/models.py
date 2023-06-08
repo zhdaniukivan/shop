@@ -84,6 +84,18 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+class Feedback(models.Model):
+    name = models.CharField(max_length=20)
+    surname = models.CharField(max_length=20)
+    feedback = models.TextField()
+    rating = models.PositiveIntegerField()
+
+class Bascet(models.Model):
+    name = models.CharField(max_length=100)
+    amount = models.PositiveIntegerField()
+
+
+
 
 
 

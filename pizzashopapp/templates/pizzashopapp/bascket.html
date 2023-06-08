@@ -7,9 +7,22 @@
 <body>
 
     <h2>It's bascket</h2>
-    <form action="/" method="post">
-    {% csrf_token %}
-     {{ form }}
+
+
+
+    {% for field in form %}
+
+        <form method="POST" class="form">
+            {% csrf_token %}
+        <div>
+            {{ field.label_tag }}
+            {{ field.errors }}
+            {{ field }}
+        </div>
+        </form>
+    {% endfor %}
+    <form action="{% url 'done' %}" method="post">
+           {% csrf_token %}
     <button  type="submit">Send</button>
     </form>
 
